@@ -3,7 +3,7 @@ import './App.css';
 import { Button } from "./components/Button";
 import { Input } from "./components/Input";
 import { ClearButton } from "./components/ClearButton";
-import * as math from "mathjs";
+
 
 class App extends Component {
   constructor(props) {
@@ -19,9 +19,7 @@ class App extends Component {
 
   };
 
-  evaluateInput = () => {
-    this.setState({input: math.eval(this.state.input) });
-  };
+  
 
   render() {
     return (
@@ -49,7 +47,7 @@ class App extends Component {
           <div className = "button-row"> 
             <Button handleClick = {this.addToInput}>.</Button>
             <Button handleClick = {this.addToInput}>0</Button>
-            <Button handleClick = {() => this.evaluateInput()}>=</Button>
+            <Button >=</Button>
             <Button handleClick = {this.addToInput}>-</Button>
           </div>
           <div className = "button-row"> 
