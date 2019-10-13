@@ -22,11 +22,13 @@ class App extends Component {
   };
 
   handleEqual = () => {
-    try {
-      this.setState({ input: evaluate(this.state.input) });
-    }
-    catch(error) {
-      this.setState({isError: true}); 
+    if (this.state.input !== "") {
+      try {
+        this.setState({ input: evaluate(this.state.input) });
+      }
+      catch(error) {
+        this.setState({isError: true}); 
+      }
     }
   };
 
