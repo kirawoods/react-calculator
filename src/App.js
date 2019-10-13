@@ -23,21 +23,15 @@ class App extends Component {
 
   handleEqual = () => {
     try {
-    this.setState({ input: evaluate(this.state.input) });
+      this.setState({ input: evaluate(this.state.input) });
     }
     catch(error) {
-      console.log(error);
       this.setState({isError: true}); 
     }
   };
 
   render() {
-    let valueToDisplay = "";
-    if (this.state.isError === true) {
-      valueToDisplay = 'ERROR'
-    }else{
-      valueToDisplay = this.state.input; 
-    }
+    const valueToDisplay = (this.state.isError) ? "ERROR" : this.state.input;
     return (
       <div className = "app">
         <div className = "calculator-wrapper">
