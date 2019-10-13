@@ -9,9 +9,21 @@
     color: white;
     flex: 1;
     outline: 1px solid white;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 6px; 
 }
+
+.button-wrapper:hover {
+    background-color: rgb(1, 1, 71);
+}
+
 
 .operator {
     background-color: blue;
     color: white; 
+}
+
+.operator:hover {
+    background-color: rgb(2, 2, 177);
 }

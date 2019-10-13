@@ -9,4 +9,11 @@
     color: white; 
     flex: 1;
     outline: 1px solid white; 
+    cursor: pointer;
+    user-select: none;
+    border-radius: 6px; 
+}
+
+.clear-button:hover {
+    background-color: rgb(1, 1, 71);
 }
