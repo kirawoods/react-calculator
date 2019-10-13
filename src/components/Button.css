@@ -5,7 +5,7 @@
     align-items: center; 
     font-weight: lighter;
     font-size: 1.4em;
-    background-color: darkblue;
+    background-color:#1F4B99;
     color: white;
     flex: 1;
     outline: 1px solid white;
@@ -15,15 +15,11 @@
 }
 
 .button-wrapper:hover {
-    background-color: rgb(1, 1, 71);
+    filter: brightness(130%);
 }
 
 
 .operator {
-    background-color: blue;
-    color: white; 
+    background-color:#2458B3;
 }
 
-.operator:hover {
-    background-color: rgb(2, 2, 177);
-}
