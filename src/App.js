@@ -11,7 +11,8 @@ class App extends Component {
     super(props);
 
     this.state = {
-      input: ""
+      input: "",
+      isError: false, 
     };
   }
   
@@ -21,14 +22,22 @@ class App extends Component {
   };
 
   handleEqual = () => {
-    this.setState({ input: evaluate(this.state.input) });
+    if (this.state.input !== "") {
+      try {
+        this.setState({ input: evaluate(this.state.input) });
+      }
+      catch(error) {
+        this.setState({isError: true}); 
+      }
+    }
   };
 
   render() {
+    const valueToDisplay = (this.state.isError) ? "ERROR" : this.state.input;
     return (
       <div className = "app">
         <div className = "calculator-wrapper">
-          <Input input={this.state.input} />
+          <Input input={valueToDisplay} />
           <div className = "button-row"> 
             <Button handleClick = {this.addToInput}>7</Button>
             <Button handleClick = {this.addToInput}>8</Button>
@@ -54,7 +63,7 @@ class App extends Component {
             <Button handleClick = {this.addToInput}>-</Button>
           </div>
           <div className = "button-row"> 
-            <ClearButton handleClear = {() => this.setState({input: ""})}>
+            <ClearButton handleClear = {() => this.setState({input: "", isError: false})}>
               Clear
             </ClearButton>
           </div>

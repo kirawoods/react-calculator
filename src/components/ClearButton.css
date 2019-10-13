@@ -5,8 +5,15 @@
     align-items: center;
     font-weight: lighter; 
     font-size: 1.4em;
-    background-color: midnightblue;
+    background-color: #2458B3;
     color: white; 
     flex: 1;
     outline: 1px solid white; 
+    cursor: pointer;
+    user-select: none;
+    border-radius: 6px; 
+}
+
+.clear-button:hover {
+    filter: brightness(130%);
 }
